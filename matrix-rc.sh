@@ -1,11 +1,12 @@
 #!/bin/bash
+export CLICOLOR_FORCE=1
+export timeo=32
 
 bin=cmatrix
 if ! command -v $bin > /dev/null; then
         sudo apt install -y $bin
 fi
 
-export timeo=32
 
 while true
 do
