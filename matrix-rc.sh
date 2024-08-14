@@ -9,6 +9,7 @@ export timeo=32
 
 while true
 do
+	reset
 	if [[ -f ~/dashboard-rc.sh ]]; then
 		~/dashboard-rc.sh
 	fi
