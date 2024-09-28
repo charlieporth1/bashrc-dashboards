@@ -19,12 +19,14 @@ Step #1
 ```
 apt install -y mingetty
 ```
+
 Step #2
 
 ```
 mkdir -p /etc/systemd/system/getty@tty1.service.d
 
 ```
+
 Step #3
 ````
 echo '''
@@ -33,10 +35,12 @@ ExecStart=
 ExecStart=-/sbin/mingetty --autologin root --noclear tty1
 ''' | tee /etc/systemd/system/getty@tty1.service.d/override.conf
 ```
+
 Step #4
 ```
 echo <any script in this dir> | tee -a ~/.bashrc
 ```
+
 Finaily
 ```
 reboot
