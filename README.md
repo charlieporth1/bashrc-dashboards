@@ -24,7 +24,6 @@ Step #2
 
 ```
 mkdir -p /etc/systemd/system/getty@tty1.service.d
-
 ```
 
 Step #3
