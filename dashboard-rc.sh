@@ -1,6 +1,8 @@
 #!/bin/bash
 export CLICOLOR_FORCE=1
 
+setterm  -powerdown 0
+
 bin=figlet
 if ! command -v $bin > /dev/null; then
 	sudo apt install -y $bin
@@ -21,6 +23,16 @@ if ! command -v $bin > /dev/null; then
 	sudo apt install -y lm-sensors
 fi
 
-figlet "Welcome to RACK #2" | lolcat -f
-ansiweather -l Edina,US -f 3
-sensors | grep temp1 | lolcat -f
+case $HOSTNAME
+in
+	charles-nano-5-desktop )
+		rack_num=1
+	;;
+	nano-desktop )
+		rack_num=2
+	;;
+esac
+
+figlet "Welcome to RACK #$rack_num" | lolcat -f --spread 1.0 --freq=0.1
+ansiweather -l Edina,US -f 3 -u imperial
+sensors | grep temp1 | lolcat -f --spread 1.0 --freq=0.1
