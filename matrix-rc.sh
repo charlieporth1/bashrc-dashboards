@@ -10,17 +10,4 @@ if ! command -v $bin > /dev/null; then
 fi
 
 
-while true
-do
-	reset
-	if [[ -f ~/dashboard-rc.sh ]]; then
-		~/dashboard-rc.sh
-	fi
-	sleep 10
-	reset
-	(
-		sleep $timeo
-		pkill -9 cmatrix
-	)&
-	cmatrix
-done
+cmatrix
