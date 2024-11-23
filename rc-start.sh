@@ -6,10 +6,6 @@ setterm  -powerdown 0
 
 # https://unix.stackexchange.com/questions/13019/description-of-kernel-printk-values
 sysctl -w kernel.printk="0 0 0 0"
-bin=cmatrix
-if ! command -v $bin > /dev/null; then
-        sudo apt install -y $bin
-fi
 
 
 while true
