@@ -16,6 +16,8 @@ do
         fi
         sleep 10
         reset
-	~/matrix-rc.sh
+        if [[ -f ~/matrix-rc.sh ]]; then
+		~/matrix-rc.sh
+	fi
         reset
 done
