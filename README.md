@@ -18,6 +18,7 @@ sudo was not included because of some distros do no include it
 Run
 ```bash
 sudo -i
+apt update
 apt install -y mingetty git
 git clone https://github.com/charlieporth1/bashrc-dashboards/
 cd bashrc-dashboards
