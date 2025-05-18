@@ -15,33 +15,27 @@ sudo was not included because of some distros do no include it
 <br/>
 <br/>
 
-Step #1
-```
-apt install -y mingetty
-```
-
-Step #2
-
-```
+Run
+```bash
+sudo -i
+apt install -y mingetty git
+git clone https://github.com/charlieporth1/bashrc-dashboards/
+cd bashrc-dashboards
+cp -rfv * ~/
 mkdir -p /etc/systemd/system/getty@tty1.service.d
-
-```
-
-Step #3
-````
 echo '''
 [Service]
 ExecStart=
 ExecStart=-/sbin/mingetty --autologin root --noclear tty1
 ''' | tee /etc/systemd/system/getty@tty1.service.d/override.conf
+echo ~/rc-start.sh | tee -a ~/.bashrc
 ```
-
-Step #4
+Or
 ```
 echo <any script in this dir> | tee -a ~/.bashrc
 ```
-
 Finaily
 ```
 reboot
 ```
+
